@@ -17,7 +17,7 @@ O Sistema de Biblioteca Avançado é um software projetado para gerenciar biblio
 - `int id`: Identificador único do livro.
 - `string titulo`: Título do livro.
 - `string autor`: Autor do livro.
-- `bool disponivel`: Indicador de disponibilidade do livro.
+- `bool disponibilidade`: Indicador de disponibilidade do livro.
 
 **Métodos:**
 - `Livro(int id, string titulo, string autor)`: Construtor da classe Livro.
@@ -29,9 +29,7 @@ O Sistema de Biblioteca Avançado é um software projetado para gerenciar biblio
 - `vector<Funcionario> funcionarios`: Lista de funcionários da biblioteca.
 
 **Métodos:**
-- `void adicionarLivro(Livro livro)`: Adiciona um novo livro à biblioteca.
 - `void adicionarUsuario(Usuario usuario)`: Adiciona um novo usuário à biblioteca.
-- `void emprestarLivro(int livroID, int usuarioID)`: Empresta um livro para um usuário.
 - `void devolverLivro(int livroID, int usuarioID)`: Devolve um livro emprestado por um usuário.
 - `void exibirEstoque()`: Exibe o estoque de livros da biblioteca.
 
@@ -39,8 +37,8 @@ O Sistema de Biblioteca Avançado é um software projetado para gerenciar biblio
 **Atributos:**
 - `int id`: Identificador único do usuário.
 - `string nome`: Nome do usuário.
-- `unordered_map<int, time_t> livrosEmprestados`: Mapa de livros emprestados pelo usuário com a data de empréstimo.
-- `double totalMulta`: Total de multas acumuladas pelo usuário.
+- `vector<Livro> livrosEmprestados`: Mapa de livros emprestados pelo usuário com a data de empréstimo.
+- `double multa`: Total de multas acumuladas pelo usuário.
 
 **Métodos:**
 - `Usuario(int id, string nome)`: Construtor da classe Usuario.
@@ -55,7 +53,8 @@ O Sistema de Biblioteca Avançado é um software projetado para gerenciar biblio
 
 **Métodos:**
 - `Funcionario(int id, string nome)`: Construtor da classe Funcionario.
-- `void notificarDevolucaoAtrasada(Usuario &usuario, int livroID, int diasAtraso)`: Notifica o usuário sobre a devolução atrasada de um livro.
+- `void cadastrarLivro(Livro livro)`: Adiciona um novo livro à biblioteca.
+- `void realizaEmprestimo(int livroID, int usuarioID)`: Empresta um livro para um usuário.
 - `void gerenciarMulta(Usuario &usuario, int diasAtraso)`: Calcula e registra a multa de um usuário com base nos dias de atraso.
 
 ## User Stories
