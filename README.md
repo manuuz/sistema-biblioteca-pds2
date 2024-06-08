@@ -89,7 +89,7 @@ O Sistema de Biblioteca Avançado é um software projetado para gerenciar biblio
 
 2. Compile o código:
    ```sh
-   g++ -o biblioteca main.cpp CadastroUsuario.cpp Playlist.cpp Filme.cpp
+   g++ -o biblioteca main.cpp Usuario.cpp Livro.cpp Funcionario.cpp
    ```
 
 3. Execute o programa:
