@@ -7,7 +7,8 @@ O Sistema de Biblioteca Avançado é um software projetado para gerenciar biblio
 ## Modelagem
 
 ### Diagrama de Classes
-![Diagrama de Classes](file-JELAhhB8U2YsuVmxSUYPgdgU)
+<img width="2848" alt="Untitled (3)" src="https://github.com/manuuz/sistema-biblioteca-pds2/assets/52366222/b3a0d1f7-1114-4b4c-a83c-a4aba5073fb4">
+
 
 ### Classes, Atributos e Métodos
 
