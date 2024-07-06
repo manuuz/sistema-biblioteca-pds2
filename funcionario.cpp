@@ -30,3 +30,23 @@ void Funcionario::realizarEmprestimo(Usuario* usuario, int idLivro) {
         }
     }
 }
+
+void Funcionario::gerenciarMultas(const std::vector<Usuario*>& usuarios) {
+    time_t agora = time(NULL);
+    for (const auto& usuario : usuarios) {
+        for (const auto& livro : usuario->getLivrosEmprestados()) {
+            struct tm* dataDevolucao = localtime(&agora);
+            dataDevolucao->tm_mday -= 7;
+            time_t devolucaoPrevista = mktime(dataDevolucao);
+
+            if (agora > devolucaoPrevista) {
+                int diasAtraso = difftime(agora, devolucaoPrevista) / (60 * 60 * 24);
+                double multa = diasAtraso * 1.0;
+                std::cout << "Usuario: " << usuario->getNome()
+                          << ", Livro: " << livro->getTitulo()
+                          << ", Devolucao prevista: " << asctime(dataDevolucao)
+                          << ", Multa: R$" << multa << std::endl;
+            }
+        }
+    }
+}

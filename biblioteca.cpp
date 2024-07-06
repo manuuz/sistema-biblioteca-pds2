@@ -61,5 +61,9 @@ void Biblioteca::exibirEstoque() const {
                   << ", Autor: " << livro->getAutor() 
                   << ", Disponivel: " << (livro->isDisponivel() ? "Sim" : "Nao") 
                   << std::endl;
-    }
+                  }
+}
+
+const std::vector<Usuario*>& Biblioteca::getUsuarios() const {
+    return usuarios;
 }
