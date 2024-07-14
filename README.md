@@ -55,18 +55,12 @@ O Sistema de Biblioteca Avançado é um software projetado para gerenciar biblio
 - `Funcionario(int id, string nome)`: Construtor da classe Funcionario.
 - `void cadastrarLivro(Livro livro)`: Adiciona um novo livro à biblioteca.
 - `void realizaEmprestimo(int livroID, int usuarioID)`: Empresta um livro para um usuário.
-- `void gerenciarMulta(Usuario &usuario, int diasAtraso)`: Calcula e registra a multa de um usuário com base nos dias de atraso.
+- `void gerenciarMulta(const std::vector<Usuario*>& usuarios)`: Calcula e registra a multa de um usuário com base nos dias de atraso.
 
 ## User Stories
 
-### Notificação de Devolução Atrasada
-- **Como funcionário da biblioteca, quero registrar a data do empréstimo e a data de devolução de um livro e ser notificado pelo sistema quando a devolução estiver atrasada.**
-- **Como cliente, quero receber uma notificação (por email ou mensagem) quando a data de devolução de um livro estiver próxima e atrasada.**
-
 ### Gerenciamento de Multas
 - **Como funcionário, quero calcular e registrar o valor total da multa por dia de atraso em relação à data de devolução de um livro.**
-- **Como cliente, quero consultar o valor da multa de um livro atrasado.**
-- **Como cliente, quero realizar o pagamento da multa de um livro atrasado.**
 
 ### Controle de Estoque
 - **Como funcionário quero cadastrar novos livros no acervo.**
@@ -105,9 +99,3 @@ O programa aceita comandos via linha de comando para gerenciar o acervo de livro
 - `emprestarLivro <livroID> <usuarioID>`: Emprestar um livro para um usuário.
 - `devolverLivro <livroID> <usuarioID>`: Devolver um livro emprestado por um usuário.
 - `exibirEstoque`: Exibir o estoque de livros da biblioteca.
-
-## Contribuição
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests para adicionar novas funcionalidades, corrigir bugs ou melhorar a documentação.
-
-## Licença
-Este projeto é licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.

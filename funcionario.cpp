@@ -9,6 +9,10 @@ void Funcionario::cadastrarLivro(int id, std::string titulo, std::string autor){
   std::cout << "Livro cadastrado com sucesso!" << std::endl;
 }
 
+int Funcionario::getId() {
+    return id;
+}
+
 void Funcionario::realizarEmprestimo(Usuario* usuario, int idLivro) {
     for (Livro* livro : livros) {
         if (livro->getID() == idLivro && livro->isDisponivel()){

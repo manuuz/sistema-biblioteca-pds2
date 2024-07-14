@@ -20,6 +20,7 @@ public:
     void devolverLivro(int livroID, int usuarioID);
     void exibirEstoque() const;
     const std::vector<Usuario*>& getUsuarios() const;
+    const std::vector<Funcionario*>& getFuncionarios() const;
 };
 
 #endif // BIBLIOTECA_HPP

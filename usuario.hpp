@@ -24,4 +24,4 @@ public:
     std::vector<Livro*> getLivrosEmprestados();
 };
 
-#endif // USUARIO_HPP
+#endif // USUARIO_HPP

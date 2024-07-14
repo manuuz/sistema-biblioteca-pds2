@@ -1,8 +1,18 @@
 #include "biblioteca.hpp"
 #include <iostream>
 #include <algorithm>
+#include <stdexcept>
+
 
 void Biblioteca::adicionarLivro(Livro* livro) {
+    auto it = std::find_if(livros.begin(), livros.end(), [livro](Livro* l) {
+        return l->getID() == livro->getID();
+    });
+
+    if (it != livros.end()) {
+        throw std::runtime_error("ID de livro já existente na biblioteca.");
+    }
+
     livros.push_back(livro);
 }
 
@@ -66,4 +76,8 @@ void Biblioteca::exibirEstoque() const {
 
 const std::vector<Usuario*>& Biblioteca::getUsuarios() const {
     return usuarios;
+}
+
+const std::vector<Funcionario*>& Biblioteca::getFuncionarios() const {
+    return funcionarios;
 }
